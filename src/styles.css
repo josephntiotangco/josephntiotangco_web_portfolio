@@ -260,6 +260,7 @@ h3 {
 .project,
 .timelineItem,
 .trainingItem,
+.writingItem,
 .educationItem {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -274,6 +275,7 @@ h3 {
 .project p,
 .timelineItem p,
 .trainingItem p,
+.writingItem p,
 .educationItem p,
 .evidenceCopy p,
 .closing p {
@@ -364,16 +366,34 @@ h3 {
   gap: 16px;
 }
 
+/* JT-2026/08/11 - style public writing evidence */
+.writingGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 680px);
+  gap: 16px;
+}
+
 .trainingItem {
   display: grid;
   gap: 12px;
   padding: 22px;
 }
 
+.writingItem {
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+}
+
+.writingItem a {
+  font-weight: 800;
+}
+
 .trainingItem h3 {
   margin-bottom: 6px;
 }
 
+.writingMeta,
 .trainingMeta {
   margin-bottom: 0;
   color: var(--green);
