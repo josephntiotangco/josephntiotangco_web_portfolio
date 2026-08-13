@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --ink: #172033;
   --muted: #5d687a;
   --line: #d9e1ea;
@@ -9,6 +9,21 @@
   --green: #1f7a62;
   --gold: #b36b24;
   --shadow: 0 22px 60px rgba(20, 35, 60, 0.14);
+} */
+/* JT-2026/08/13 - align the site palette with the personal logo */
+:root {
+  --ink: #102331;
+  --muted: #587080;
+  --line: #cfe5ec;
+  --panel: #ffffff;
+  --soft: #eef8fb;
+  --blue: #087ca7;
+  --blue-dark: #073b57;
+  --green: #00a9a5;
+  --cyan: #18d7e8;
+  --gold: #b9852f;
+  --deep: #062235;
+  --shadow: 0 22px 60px rgba(4, 34, 53, 0.14);
 }
 
 * {
@@ -72,8 +87,8 @@ h3 {
   justify-content: space-between;
   min-height: 68px;
   padding: 0 5vw;
-  border-bottom: 1px solid rgba(217, 225, 234, 0.88);
-  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(207, 229, 236, 0.92);
+  background: rgba(249, 253, 255, 0.94);
   backdrop-filter: blur(14px);
 }
 
@@ -85,7 +100,7 @@ h3 {
   font-weight: 800;
 }
 
-.brandMark {
+/* .brandMark {
   display: inline-grid;
   width: 36px;
   height: 36px;
@@ -94,6 +109,13 @@ h3 {
   color: #fff;
   background: linear-gradient(135deg, var(--blue), var(--green));
   letter-spacing: 0;
+} */
+/* JT-2026/08/13 - render the personal logo as the brand mark */
+.brandMark {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .nav {
@@ -113,7 +135,7 @@ h3 {
   align-items: center;
   min-height: calc(100vh - 68px);
   padding: 7vh 5vw 8vh;
-  background:
+  /* background:
     linear-gradient(90deg, rgba(244, 247, 251, 0.98), rgba(244, 247, 251, 0.92)),
     repeating-linear-gradient(
       90deg,
@@ -129,7 +151,26 @@ h3 {
       transparent 1px,
       transparent 72px
     ),
-    #f4f7fb;
+    #f4f7fb; */
+  /* JT-2026/08/13 - use logo-inspired cyan grid pattern */
+  background:
+    linear-gradient(90deg, rgba(239, 250, 253, 0.98), rgba(249, 253, 255, 0.9)),
+    linear-gradient(135deg, rgba(24, 215, 232, 0.13), transparent 42%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(8, 124, 167, 0.1) 0,
+      rgba(8, 124, 167, 0.1) 1px,
+      transparent 1px,
+      transparent 72px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 169, 165, 0.1) 0,
+      rgba(0, 169, 165, 0.1) 1px,
+      transparent 1px,
+      transparent 72px
+    ),
+    #eef8fb;
 }
 
 .hero::after {
@@ -138,8 +179,9 @@ h3 {
   bottom: 7vh;
   width: min(28vw, 360px);
   height: min(28vw, 360px);
-  border: 1px solid rgba(36, 86, 166, 0.16);
+  border: 1px solid rgba(24, 215, 232, 0.36);
   border-radius: 50%;
+  box-shadow: inset 0 0 0 10px rgba(8, 124, 167, 0.04);
   content: "";
   pointer-events: none;
 }
@@ -185,10 +227,10 @@ h3 {
 
 .roleStrip span {
   padding: 8px 12px;
-  border: 1px solid rgba(36, 86, 166, 0.18);
+  border: 1px solid rgba(24, 215, 232, 0.32);
   border-radius: 999px;
   color: var(--blue-dark);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.78);
   font-size: 0.86rem;
   font-weight: 800;
 }
@@ -209,15 +251,15 @@ h3 {
 
 .button.primary {
   color: #fff;
-  border-color: var(--blue);
-  background: var(--blue);
+  border-color: var(--blue-dark);
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
 }
 
 .profileCard {
   display: grid;
   gap: 18px;
   padding: 22px;
-  border: 1px solid rgba(217, 225, 234, 0.9);
+  border: 1px solid rgba(207, 229, 236, 0.95);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow);
@@ -242,7 +284,9 @@ h3 {
 }
 
 .section.muted {
-  background: var(--soft);
+  background:
+    linear-gradient(180deg, rgba(238, 248, 251, 0.96), rgba(246, 252, 253, 0.98)),
+    var(--soft);
 }
 
 .sectionHeading {
@@ -265,6 +309,17 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+}
+
+/* JT-2026/08/13 - add restrained cyan edge accents from the logo */
+.capabilityGrid article,
+.project,
+.timelineItem,
+.trainingItem,
+.writingItem,
+.educationItem,
+.evidenceGallery figure {
+  box-shadow: inset 0 3px 0 rgba(24, 215, 232, 0.28);
 }
 
 .capabilityGrid article {
@@ -348,9 +403,10 @@ h3 {
 
 .project li {
   padding: 7px 10px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(207, 229, 236, 0.9);
   border-radius: 999px;
-  color: var(--muted);
+  color: var(--blue-dark);
+  background: rgba(238, 248, 251, 0.74);
   font-size: 0.82rem;
   font-weight: 700;
 }

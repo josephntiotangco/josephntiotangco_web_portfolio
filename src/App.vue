@@ -221,14 +221,16 @@ function moveEvidence(direction) {
 <template>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Joseph Nunag-Tiotangco portfolio">
-      <span class="brandMark">JT</span>
+      <!-- <span class="brandMark">JT</span> -->
+      <!-- JT-2026/08/13 - use personal logo as the portfolio brand mark -->
+      <img class="brandMark" src="/assets/jt-logo-192.png" alt="" aria-hidden="true" />
       <span>{{ profile.name }}</span>
     </a>
     <nav class="nav" aria-label="Primary navigation">
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#evidence">Evidence</a>
       <a href="#writing">Writing</a>
+      <a href="#evidence">Evidence</a>
       <a href="#training">Training</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
@@ -323,6 +325,23 @@ function moveEvidence(direction) {
       </div>
     </section>
 
+    <section id="writing" class="section" aria-labelledby="writing-title">
+      <div class="sectionHeading">
+        <p class="eyebrow">Writing</p>
+        <h2 id="writing-title">Public writing that supports my software engineering journey.</h2>
+      </div>
+      <div class="writingGrid">
+        <article v-for="item in writingItems" :key="item.title" class="writingItem">
+          <p class="writingMeta">{{ item.platform }}</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.summary }}</p>
+          <a :href="item.link" target="_blank" rel="noreferrer">
+            Read article
+          </a>
+        </article>
+      </div>
+    </section>
+
     <section id="evidence" class="section muted" aria-labelledby="evidence-title">
       <div class="sectionHeading">
         <p class="eyebrow">Public Evidence</p>
@@ -374,23 +393,6 @@ function moveEvidence(direction) {
           </figure>
           <button type="button" aria-label="Next evidence" @click="moveEvidence(1)">›</button>
         </div>
-      </div>
-    </section>
-
-    <section id="writing" class="section" aria-labelledby="writing-title">
-      <div class="sectionHeading">
-        <p class="eyebrow">Writing</p>
-        <h2 id="writing-title">Public writing that supports my software engineering journey.</h2>
-      </div>
-      <div class="writingGrid">
-        <article v-for="item in writingItems" :key="item.title" class="writingItem">
-          <p class="writingMeta">{{ item.platform }}</p>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.summary }}</p>
-          <a :href="item.link" target="_blank" rel="noreferrer">
-            Read article
-          </a>
-        </article>
       </div>
     </section>
 
