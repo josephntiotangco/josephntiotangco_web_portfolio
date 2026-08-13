@@ -84,7 +84,9 @@ const projects = [
     link: "https://auditortimeoutputprogress.vercel.app/"
   },
   {
-    name: "EcomAPI_kfpt and VueKFPTWeb_Mod",
+    // name: "EcomAPI_kfpt and VueKFPTWeb_Mod",
+    //JT-2026/08/13 - simplify deployed project display name
+    name: "KFPT Web",
     type: "E-commerce web system",
     stack: ["ASP.NET Core", "Vue", "Pinia", "Axios", "SQL Server"],
     summary:
