@@ -117,6 +117,13 @@ const projects = [
 ];
 
 const trainings = [
+  //JT-2026/09/30 - add ai champion recognition credential
+  {
+    title: "AI Champion",
+    meta: "iRipple Inc. - Certificate of Recognition",
+    focus:
+      "Recognized for AI fluency, innovative use of artificial intelligence, and applying AI to improve productivity and create meaningful organizational impact."
+  },
   {
     title: "Foundational C# with Microsoft",
     meta: "freeCodeCamp / Microsoft - 2025",
