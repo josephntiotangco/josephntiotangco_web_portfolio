@@ -120,7 +120,9 @@ const trainings = [
   //JT-2026/09/30 - add ai champion recognition credential
   {
     title: "AI Champion",
-    meta: "iRipple Inc. - Certificate of Recognition",
+    // meta: "iRipple Inc. - Certificate of Recognition",
+    //JT-2026/10/01 - add recognition month for credential ordering
+    meta: "iRipple Inc. - Certificate of Recognition - September 2026",
     focus:
       "Recognized for AI fluency, innovative use of artificial intelligence, and applying AI to improve productivity and create meaningful organizational impact."
   },
