@@ -124,6 +124,13 @@ const trainings = [
     focus:
       "Recognized for AI fluency, innovative use of artificial intelligence, and applying AI to improve productivity and create meaningful organizational impact."
   },
+  //JT-2026/10/01 - add blazor net 9 course credential
+  {
+    title: "Blazor - The Complete Guide [.NET 9] [2025] [E-commerce]",
+    meta: "Udemy - October 2026 - 11 hours",
+    focus:
+      "Blazor and .NET 9 application development with e-commerce implementation concepts."
+  },
   {
     title: "Foundational C# with Microsoft",
     meta: "freeCodeCamp / Microsoft - 2025",
