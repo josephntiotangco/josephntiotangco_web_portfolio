@@ -25,23 +25,64 @@ const profile = {
 const capabilities = [
   {
     title: "Application Engineering",
+    // details:
+    //   "C#, .NET, Ruby on Rails, PHP, Avalonia UI, WPF, Xamarin Forms, issue analysis, debugging, maintenance, and production support."
+    //JT-2026/10/03 - describe application engineering outcomes clearly
     details:
-      "C#, .NET, Ruby on Rails, PHP, Avalonia UI, WPF, Xamarin Forms, issue analysis, debugging, maintenance, and production support."
+      "Develops, enhances, and supports business applications using C# and .NET, including issue investigation, debugging, maintenance, and production support."
   },
   {
     title: "Business Systems",
+    // details:
+    //   "Requirements analysis, functional specifications, workflow review, user acceptance testing, go-live support, and client issue handling."
+    //JT-2026/10/03 - describe business systems work in employer-facing terms
     details:
-      "Requirements analysis, functional specifications, workflow review, user acceptance testing, go-live support, and client issue handling."
+      "Turns business requirements into practical software features through process analysis, clear documentation, testing, go-live preparation, and client support."
   },
   {
     title: "Full-Stack Development",
+    // details:
+    //   "Vue, Vite, Pinia, Axios, ASP.NET Core Web API, authentication flows, dashboards, reports, and database-backed applications."
+    //JT-2026/10/03 - describe full stack work in hr-friendly language
     details:
-      "Vue, Vite, Pinia, Axios, ASP.NET Core Web API, authentication flows, dashboards, reports, and database-backed applications."
+      "Delivers complete web applications with user-facing pages, backend services, databases, secure user accounts, dashboards, reports, and e-commerce workflows using modern .NET and Blazor."
   },
   {
-    title: "Mobile and Utilities",
+    // title: "Mobile and Utilities",
+    //JT-2026/10/03 - include mobile and ai delivery capabilities
+    title: "Mobile Development and AI-Assisted Delivery",
+    // details:
+    //   ".NET MAUI, Kotlin Android, Jetpack Compose, Room, WorkManager, QR scanning, SMS scheduling, and local data workflows."
     details:
-      ".NET MAUI, Kotlin Android, Jetpack Compose, Room, WorkManager, QR scanning, SMS scheduling, and local data workflows."
+      "Builds cross-platform mobile applications using .NET MAUI, C#, and XAML, while using AI-assisted tools for research, analysis, prototyping, documentation, and productivity improvements with human review."
+  }
+];
+
+//JT-2026/10/03 - group verified technical skills for quick portfolio scanning
+const technicalSkills = [
+  {
+    category: "Application & Web",
+    skills: ["C#", ".NET", "ASP.NET Core", "Blazor", "Vue 3", "Vite", "PHP", "Ruby on Rails"]
+  },
+  {
+    category: "Data, APIs & Security",
+    skills: ["REST APIs", "Entity Framework Core", "MySQL", "SQL Server", "JWT", "Authentication", "API Integration"]
+  },
+  {
+    category: "Mobile Development",
+    skills: [".NET MAUI", "XAML", "Kotlin", "Jetpack Compose", "Xamarin Forms", "Room", "WorkManager"]
+  },
+  {
+    category: "Desktop & Device Features",
+    skills: ["WPF", "Avalonia UI", "QR Scanning", "ZXing.Net.Maui", "Camera APIs", "SmsManager"]
+  },
+  {
+    category: "Engineering Delivery",
+    skills: ["Git", "GitHub", "Debugging", "Production Support", "UAT", "Database Workflows", "E-commerce Workflows"]
+  },
+  {
+    category: "AI-Assisted Delivery",
+    skills: ["Prompt Engineering", "AI Agents", "AI-Assisted Research", "Prototyping", "Documentation", "Human Review"]
   }
 ];
 
@@ -125,6 +166,13 @@ const trainings = [
     meta: "iRipple Inc. - Certificate of Recognition - September 2026",
     focus:
       "Recognized for AI fluency, innovative use of artificial intelligence, and applying AI to improve productivity and create meaningful organizational impact."
+  },
+  //JT-2026/10/03 - add net maui mobile development course credential
+  {
+    title: "Build Mobile Apps with .NET MAUI, C#, and XAML",
+    meta: "Udemy - October 2026 - 8.5 hours",
+    focus:
+      "Cross-platform mobile application development using .NET MAUI, C#, and XAML."
   },
   //JT-2026/10/01 - add blazor net 9 course credential
   {
@@ -285,7 +333,9 @@ function moveEvidence(direction) {
         <div>
           <h2>{{ profile.name }}</h2>
           <p>
-            Software Engineer working on .NET, Vue, APIs, system enhancements, and production support.
+            <!-- Software Engineer working on .NET, Vue, APIs, system enhancements, and production support. -->
+            <!-- JT-2026/10/03 - align profile summary with the broader engineering headline -->
+            Software Engineer building practical business applications, full-stack systems, and reliable operational workflows.
           </p>
         </div>
       </aside>
@@ -301,6 +351,21 @@ function moveEvidence(direction) {
           <h3>{{ capability.title }}</h3>
           <p>{{ capability.details }}</p>
         </article>
+      </div>
+      <!-- JT-2026/10/03 - display categorized technical skills below capability summaries -->
+      <div class="technicalSkillsPanel" aria-labelledby="technical-skills-title">
+        <div class="technicalSkillsHeading">
+          <p class="eyebrow">Technical Skills</p>
+          <h3 id="technical-skills-title">Tools and technologies used across projects and workplace delivery.</h3>
+        </div>
+        <div class="technicalSkillsGrid">
+          <section v-for="skillGroup in technicalSkills" :key="skillGroup.category" class="technicalSkillGroup">
+            <h4>{{ skillGroup.category }}</h4>
+            <ul class="technicalSkillList">
+              <li v-for="skill in skillGroup.skills" :key="skill">{{ skill }}</li>
+            </ul>
+          </section>
+        </div>
       </div>
     </section>
 
