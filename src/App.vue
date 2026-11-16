@@ -74,7 +74,21 @@ const technicalSkills = [
   },
   {
     category: "Desktop & Device Features",
-    skills: ["WPF", "Avalonia UI", "QR Scanning", "ZXing.Net.Maui", "Camera APIs", "SmsManager"]
+    // skills: ["WPF", "Avalonia UI", "QR Scanning", "ZXing.Net.Maui", "Camera APIs", "SmsManager"]
+    //JT-2026/11/16 - include game client technologies from the godot project
+    skills: [
+      "WPF",
+      "Avalonia UI",
+      "Godot 4.7",
+      "rAthena",
+      "Game Networking",
+      "Shaders",
+      "Pathfinding",
+      "QR Scanning",
+      "ZXing.Net.Maui",
+      "Camera APIs",
+      "SmsManager"
+    ]
   },
   {
     category: "Engineering Delivery",
@@ -154,6 +168,15 @@ const projects = [
     stack: [".NET MAUI", "ZXing.Net.Maui", "Camera API"],
     summary:
       "QR scanning utility that detects QR values through the camera, displays scanned results, opens valid links, and supports reset behavior."
+  },
+  //JT-2026/11/16 - add godot classic ro client project
+  {
+    name: "Classic RO Godot Client",
+    type: "Game development prototype",
+    stack: ["Godot 4.7", "C#", ".NET 8", "rAthena", "Shaders"],
+    summary:
+      "Experimental classic MMORPG client built with Godot and C#, featuring local rAthena connectivity, character selection, map loading, NPC interaction, chat, and HUD workflows.",
+    link: "https://github.com/josephntiotangco/godot-classicro"
   }
 ];
 
