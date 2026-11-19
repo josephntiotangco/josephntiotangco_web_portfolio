@@ -468,6 +468,16 @@ h3 {
   font-weight: 800;
 }
 
+/*JT-2026/11/19 - frame optional live project embeds within project cards*/
+.projectEmbed {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--deep);
+}
+
 .trainingGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

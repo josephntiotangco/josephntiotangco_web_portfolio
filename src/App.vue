@@ -62,7 +62,9 @@ const capabilities = [
 const technicalSkills = [
   {
     category: "Application & Web",
-    skills: ["C#", ".NET", "ASP.NET Core", "Blazor", "Vue 3", "Vite", "PHP", "Ruby on Rails"]
+    // skills: ["C#", ".NET", "ASP.NET Core", "Blazor", "Vue 3", "Vite", "PHP", "Ruby on Rails"]
+    //JT-2026/11/19 - include browser game development technologies
+    skills: ["C#", ".NET", "ASP.NET Core", "Blazor", "Vue 3", "Vite", "JavaScript", "HTML5", "CSS3", "PHP", "Ruby on Rails"]
   },
   {
     category: "Data, APIs & Security",
@@ -176,7 +178,20 @@ const projects = [
     stack: ["Godot 4.7", "C#", ".NET 8", "rAthena", "Shaders"],
     summary:
       "Experimental classic MMORPG client built with Godot and C#, featuring local rAthena connectivity, character selection, map loading, NPC interaction, chat, and HUD workflows.",
-    link: "https://github.com/josephntiotangco/godot-classicro"
+    link: "https://github.com/josephntiotangco/godot-classicro",
+    linkLabel: "View source on GitHub"
+  },
+  //JT-2026/11/19 - add pinoy struggle browser game project with preview
+  {
+    name: "Pinoy Struggle",
+    type: "Browser arcade fighting game",
+    stack: ["JavaScript", "HTML5", "CSS3", "Responsive Touch Controls"],
+    summary:
+      "Single-player arcade fighter set in Tondo, Manila, where players control Juan through nine challengers using keyboard or mobile touch controls.",
+    link: "https://pinoy-struggle.vercel.app/",
+    linkLabel: "Play game",
+    repository: "https://github.com/josephntiotangco/pinoy-struggle",
+    embed: "https://pinoy-struggle.vercel.app/"
   }
 ];
 
@@ -418,13 +433,25 @@ function moveEvidence(direction) {
         <article v-for="project in projects" :key="project.name" class="project">
           <p class="projectType">{{ project.type }}</p>
           <h3>{{ project.name }}</h3>
+          <!-- JT-2026/11/19 - embed an optional live project preview -->
+          <iframe
+            v-if="project.embed"
+            class="projectEmbed"
+            :src="project.embed"
+            :title="`${project.name} live preview`"
+            loading="lazy"
+            allow="fullscreen"
+          ></iframe>
           <p>{{ project.summary }}</p>
           <ul>
             <li v-for="item in project.stack" :key="item">{{ item }}</li>
           </ul>
           <a v-if="project.link" :href="project.link" target="_blank" rel="noreferrer">
-            View deployed app
+            <!-- View deployed app -->
+            <!-- JT-2026/11/19 - use project-specific link labels -->
+            {{ project.linkLabel || "View deployed app" }}
           </a>
+          <a v-if="project.repository" :href="project.repository" target="_blank" rel="noreferrer">View source on GitHub</a>
         </article>
       </div>
     </section>
